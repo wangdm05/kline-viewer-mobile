@@ -256,7 +256,7 @@ export default function App() {
         </>}
       </div>
 
-      <section className="chart-layout mt-6 grid gap-4 lg:grid-cols-[minmax(0,4fr)_minmax(220px,1fr)]">
+      <section className="chart-layout mt-6 grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,4fr)_minmax(220px,1fr)]">
         <div className="chart-card min-w-0 rounded-3xl border border-ink-200/60 bg-white/70 p-5 shadow-lg backdrop-blur dark:border-ink-700 dark:bg-ink-800/80">
           <div className="flex flex-wrap items-center gap-4">
             <div className="date-navigation flex flex-wrap items-center gap-2">
@@ -410,7 +410,7 @@ export default function App() {
           </div>
         </div>
 
-        <aside className="space-y-4">
+        <aside className="min-w-0 space-y-4">
           <div className="min-w-0 rounded-3xl border border-ink-200/60 bg-white/70 p-5 shadow-lg backdrop-blur dark:border-ink-700 dark:bg-ink-800/80">
             <h2 className="text-sm uppercase tracking-[0.25em] text-ink-500 dark:text-mist-200">
               日K 预览
