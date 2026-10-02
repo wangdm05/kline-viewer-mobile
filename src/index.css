@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  background: radial-gradient(circle at top, rgba(35, 180, 167, 0.15), transparent 55%),
+    radial-gradient(circle at 20% 20%, rgba(240, 122, 73, 0.12), transparent 45%),
+    #f6f7fb;
+  color: #0b0f1a;
+}
+
+.kline-app {
+  padding-top: max(24px, env(safe-area-inset-top));
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+}
+
+@media (max-width: 767px), (max-width: 1023px) and (orientation: landscape) and (max-height: 600px) {
+  .kline-app {
+    padding: max(12px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+  }
+  .kline-app h1 { font-size: 22px; }
+  .kline-app h1 span:first-child, .kline-app .desktop-only, .tag-editor-container.hidden { display: none; }
+  .kline-app h1 span:last-child { display: inline; }
+  .kline-app .mobile-settings-toggle, .kline-app .mobile-chart-zoom { display: inline-flex; }
+  .kline-app .mobile-chart-hint { display: block; }
+  .chart-settings.hidden { display: none; }
+  .chart-settings.flex { display: flex; }
+  .kline-app header { gap: 12px; }
+  .kline-app button, .kline-app select { min-height: 44px; }
+  .kline-app input:not([type="color"]) { min-height: 44px; font-size: 16px; }
+  .kline-app input[type="color"] { width: 44px; height: 44px; }
+  .chart-layout { margin-top: 14px; }
+  .chart-card { padding: 12px; border-radius: 20px; }
+  .date-navigation { gap: 6px; }
+  .date-navigation > label { letter-spacing: 0; }
+  .date-navigation select { max-width: 140px; padding-left: 8px; padding-right: 8px; }
+  .chart-settings { gap: 12px; }
+  .time-inputs { width: 100%; }
+  .time-inputs input { width: 100%; min-width: 0; }
+  .chart-frame { height: 64svh; min-height: 470px; padding: 6px; margin-top: 12px; }
+  .chart-frame:has(.tag-editor-visible) { height: 86svh; min-height: 720px; }
+  .tag-editor-heading { flex-basis: 100%; }
+  .tag-editor-title { flex-basis: calc(100% - 52px); white-space: nowrap; }
+  .tag-editor-title input { min-width: 0; width: 100%; }
+  .tag-editor > div:first-child > button { flex-basis: calc(50% - 4px); }
+  .kline-app aside > div { padding: 14px; border-radius: 20px; }
+  .kline-app aside p, .kline-app [role="status"] { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 1023px) and (orientation: landscape) and (max-height: 600px) {
+  .chart-frame { height: 88svh; min-height: 360px; }
+  .chart-frame:has(.tag-editor-visible) { min-height: 610px; }
+}
+
+.dark body {
+  background: radial-gradient(circle at top, rgba(35, 180, 167, 0.2), transparent 55%),
+    radial-gradient(circle at 20% 20%, rgba(240, 122, 73, 0.1), transparent 45%),
+    #0b0f1a;
+  color: #f6f7fb;
+}
